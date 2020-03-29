@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">drdibi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">دکتر دیبی</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="name_hint">نام بیمار را بنویسید</string>
+    <string name="fname_hint">نام خانوادگی بیمار را بنویسید</string>
+    <string name="weight_hint">وزن بیمار را به کیلوگرم بنویسید</string>
+    <string name="age_hint">سن بیمار را بنویسید</string>
+    <string name="register_titr">ثبت مشخصات بیمار</string>
+    <string name="register_button">ثبت نام</string>
+
+    <string name="menu_home">خانه</string>
+    <string name="menu_gallery">چقدر انسولین بزنم؟</string>
+    <string name="menu_slideshow">دیبی کالا</string>
+
+    <string name="home_second">Home Second</string>
+</resources>

@@ -1,0 +1,350 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:835642516282848618",
+      "lastPropertyId": "8:2951627152301681636",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:1535828740528697621",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6097564658731058868",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:7314749198650964548",
+          "name": "fName",
+          "type": 9
+        },
+        {
+          "id": "4:5954466283142193375",
+          "name": "weight",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:3476421631598784007",
+          "name": "cityId",
+          "indexId": "1:3626540177292529085",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "City"
+        },
+        {
+          "id": "6:2485622764241731148",
+          "name": "provinceId",
+          "indexId": "8:5009551211106021538",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Province"
+        },
+        {
+          "id": "7:1861699474856199014",
+          "name": "age",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "8:2951627152301681636",
+          "name": "insulinUser",
+          "type": 1,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "10:2378992164076110227",
+          "name": "products",
+          "targetId": "7:7669987968803205666"
+        },
+        {
+          "id": "11:2749293708947093012",
+          "name": "addresses",
+          "targetId": "4:4380365947625473510"
+        },
+        {
+          "id": "12:3438471634124020702",
+          "name": "foods",
+          "targetId": "6:399620501223401528"
+        }
+      ]
+    },
+    {
+      "id": "3:2129552521179288034",
+      "lastPropertyId": "3:5063255479628719526",
+      "name": "City",
+      "properties": [
+        {
+          "id": "1:2161197860212488543",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3599689910425366683",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:5063255479628719526",
+          "name": "provinceId",
+          "indexId": "4:942370922500580930",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Province"
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:6742355045846286691",
+          "name": "users",
+          "targetId": "2:835642516282848618"
+        },
+        {
+          "id": "4:4453718354965388453",
+          "name": "addresses",
+          "targetId": "4:4380365947625473510"
+        }
+      ]
+    },
+    {
+      "id": "4:4380365947625473510",
+      "lastPropertyId": "4:7288175886979334331",
+      "name": "Address",
+      "properties": [
+        {
+          "id": "1:5723312231685155630",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8321160679369579076",
+          "name": "postalCode",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "3:4069739973178361675",
+          "name": "provinceId",
+          "indexId": "2:1984100651242795746",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Province"
+        },
+        {
+          "id": "4:7288175886979334331",
+          "name": "cityId",
+          "indexId": "3:7903851496665229310",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "City"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:6162771007119166747",
+      "lastPropertyId": "2:7414242400250852350",
+      "name": "Category",
+      "properties": [
+        {
+          "id": "1:3059267113598072011",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7414242400250852350",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:447581567208744730",
+          "name": "subCategories",
+          "targetId": "9:2649556442789036647"
+        },
+        {
+          "id": "3:7751164544437554415",
+          "name": "products",
+          "targetId": "7:7669987968803205666"
+        }
+      ]
+    },
+    {
+      "id": "6:399620501223401528",
+      "lastPropertyId": "5:2525014708062109199",
+      "name": "Food",
+      "properties": [
+        {
+          "id": "1:5939097163529413957",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8272258370471947533",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:3953675453093408772",
+          "name": "fat",
+          "type": 7,
+          "flags": 4
+        },
+        {
+          "id": "4:4052244954197995067",
+          "name": "protein",
+          "type": 7,
+          "flags": 4
+        },
+        {
+          "id": "5:2525014708062109199",
+          "name": "carb",
+          "type": 7,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "5:8951520773821583745",
+          "name": "users",
+          "targetId": "2:835642516282848618"
+        }
+      ]
+    },
+    {
+      "id": "7:7669987968803205666",
+      "lastPropertyId": "3:4452082509104321485",
+      "name": "Product",
+      "properties": [
+        {
+          "id": "1:411755046459131472",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3069066264555797493",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:4452082509104321485",
+          "name": "subCategoryId",
+          "indexId": "5:2988897113486451183",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "SubCategory"
+        }
+      ],
+      "relations": [
+        {
+          "id": "6:7944872002116579914",
+          "name": "users",
+          "targetId": "2:835642516282848618"
+        }
+      ]
+    },
+    {
+      "id": "8:3103562869244849351",
+      "lastPropertyId": "2:5032626666842735893",
+      "name": "Province",
+      "properties": [
+        {
+          "id": "1:1961327997769620222",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5032626666842735893",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "7:128251150585532153",
+          "name": "cities",
+          "targetId": "3:2129552521179288034"
+        },
+        {
+          "id": "8:6074334771730271403",
+          "name": "users",
+          "targetId": "2:835642516282848618"
+        },
+        {
+          "id": "9:5861579373889474314",
+          "name": "addresses",
+          "targetId": "4:4380365947625473510"
+        }
+      ]
+    },
+    {
+      "id": "9:2649556442789036647",
+      "lastPropertyId": "4:8407947929023338830",
+      "name": "SubCategory",
+      "properties": [
+        {
+          "id": "1:2249685388943318151",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3017769322254680375",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:3556243668503115268",
+          "name": "productListId",
+          "indexId": "6:3528359261394919374",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Product"
+        },
+        {
+          "id": "4:8407947929023338830",
+          "name": "productsId",
+          "indexId": "7:1033753530685846628",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Product"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "9:2649556442789036647",
+  "lastIndexId": "8:5009551211106021538",
+  "lastRelationId": "12:3438471634124020702",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    3842073367100710105
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    3241739355772908394,
+    6785877707558637486,
+    8472145241100485165,
+    7447504583502364115,
+    101014975530051612
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
