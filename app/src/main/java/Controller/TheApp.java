@@ -2,10 +2,17 @@ package Controller;
 
 import android.app.Application;
 
-public class ExampleApp extends Application {
+import static Controller.ObjectBox.init;
+
+
+public class TheApp extends Application {
+
+
     @Override
     public void onCreate() {
         super.onCreate();
-        ObjectBox.init(this);
+        init(this);
     }
+
+
 }

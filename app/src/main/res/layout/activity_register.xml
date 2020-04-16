@@ -1,90 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/baseLinLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:layout_margin="50dp"
     android:orientation="vertical"
-    android:layout_margin="10dp"
     android:weightSum="10"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <RadioGroup
+        android:id="@+id/rgSex"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:textColor="#ffffff"
-        android:background="#0000ff"
-        android:layout_marginBottom="20dp"
-        android:text="@string/register_titr"
-        android:textSize="24sp" />
+        android:orientation="horizontal">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-        android:layout_weight="1">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userName"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textDirection="rtl"
-            android:hint="@string/name_hint" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userFName"
-            android:layout_width="match_parent"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textDirection="rtl"
-            android:hint="@string/fname_hint" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="@string/female" />
+    </RadioGroup>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userWeight"
+            android:id="@+id/etMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textDirection="rtl"
-            android:hint="@string/weight_hint" />
+            android:hint="@string/mobile_hint"
+            android:textDirection="rtl" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userAge"
+            android:id="@+id/etWeight"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textDirection="rtl"
-            android:hint="@string/age_hint" />
+            android:hint="@string/weight_hint"
+            android:textDirection="rtl" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age_hint"
+            android:textDirection="rtl" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/height_hint"
+            android:textDirection="rtl" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/btnEnter"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:textSize="24sp"
-
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="100dp"
         android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="@string/btnEnter"
+
         android:textColor="#0000ff"
 
-        android:layout_marginHorizontal="100dp"
-
-        android:text="@string/register_button" />
+        android:textSize="24sp" />
 
 </LinearLayout>
