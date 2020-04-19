@@ -6,16 +6,26 @@ import io.objectbox.relation.ToOne;
 
 @Entity
 public class Address {
+
+    //Variables
+
     @Id
-    Long id;
-    private ToOne<Province> province;
-    private ToOne<City> city;
+    private Long id;
     private String postalCode;
     private String restOfAddress;
+
+    //Relations
+
     private ToOne<User> user;
+    private ToOne<Province> province;
+    private ToOne<City> city;
+
+    //Constructors
 
     public Address() {
     }
+
+    //Getters & Setters
 
     public Long getId() {
         return id;
@@ -64,4 +74,6 @@ public class Address {
     public void setRestOfAddress(String restOfAddress) {
         this.restOfAddress = restOfAddress;
     }
+
+    //Methods
 }

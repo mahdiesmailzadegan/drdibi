@@ -8,13 +8,21 @@ import io.objectbox.relation.ToMany;
 @Entity
 public class Province {
 
+    //Variables
+
     @Id
     private long id;
     private String name;
+
+    //Relations
+
     @Backlink(to = "province")
     private ToMany<City> cities;
+
     @Backlink(to = "province")
     private ToMany<Address> addresses;
+
+    //Constructors
 
     public Province() {
     }
@@ -22,6 +30,8 @@ public class Province {
     public Province(String name) {
         this.name = name;
     }
+
+    //Getters & Setters
 
     public ToMany<City> getCities() {
         return cities;
@@ -54,4 +64,7 @@ public class Province {
     public void setName(String name) {
         this.name = name;
     }
+
+    //Methods
+
 }

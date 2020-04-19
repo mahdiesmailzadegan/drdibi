@@ -2,8 +2,6 @@ package Model;
 
 import androidx.annotation.NonNull;
 
-import java.time.LocalTime;
-
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
@@ -12,6 +10,8 @@ import io.objectbox.relation.ToMany;
 
 @Entity
 public class User {
+
+    //Variables
 
     @Id
     private long id;
@@ -23,15 +23,26 @@ public class User {
     private String height;
     @Unique
     private String mobile;
-    @Backlink(to = "user")
-    private ToMany<Address> addresses;
-    @Backlink(to = "users")
-    private ToMany<Food> foods;
     private double carbFactor;
     private double maxCarbFactor;
     private double minCarbFactor;
+
+    //Relations
+
+    @Backlink(to = "user")
+    private ToMany<Address> addresses;
+
+    @Backlink(to = "users")
+    private ToMany<Food> foods;
+
+
     @Backlink(to = "user")
     private ToMany<Action> actions;
+
+    @Backlink(to = "user")
+    private ToMany<Order> orders;
+
+    //Constructors
 
     public User() {
     }
@@ -43,6 +54,8 @@ public class User {
         this.height = height;
         this.mobile = mobile;
     }
+
+    //Getters & Setters
 
     public double getMaxCarbFactor() {
         return maxCarbFactor;
@@ -76,7 +89,7 @@ public class User {
         this.actions = actions;
     }
 
-    public double getCarbFactor() {
+    /*public double getCarbFactor() {
 
         if (weight < 27) {
             maxCarbFactor = 30;
@@ -134,12 +147,12 @@ public class User {
 
 
         return carbFactor;
-    }
+    }*/
 
     public void setCarbFactor(double carbFactor) {
         this.carbFactor = carbFactor;
     }
-
+/*
     private void checkHour() {
         LocalTime time = LocalTime.now();
         int hour = time.getHour();
@@ -154,7 +167,7 @@ public class User {
             carbFactor = maxCarbFactor;
 
         }
-    }
+    }*/
 
     public ToMany<Address> getAddresses() {
         return addresses;
@@ -227,6 +240,8 @@ public class User {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    //Methods
 
     @NonNull
     @Override

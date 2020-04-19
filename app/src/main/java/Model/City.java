@@ -10,12 +10,20 @@ import io.objectbox.relation.ToOne;
 @Entity
 public class City {
 
+    //Variables
+
     @Id
     private long id;
     private String name;
+
+    //Relations
+
     @Backlink
     private ToMany<Address> addresses;
     private ToOne<Province> province;
+
+    //Constructors
+
 
     public City() {
     }
@@ -23,6 +31,8 @@ public class City {
     public City(String name) {
         this.name = name;
     }
+
+    //Getters & Setters
 
     public ToMany<Address> getAddresses() {
         return addresses;
@@ -55,4 +65,6 @@ public class City {
     public void setName(String name) {
         this.name = name;
     }
+
+    //Methods
 }
