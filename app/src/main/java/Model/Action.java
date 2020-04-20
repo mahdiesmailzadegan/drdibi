@@ -22,8 +22,11 @@ public class Action {
 
     @Backlink(to = "actions")
     private ToMany<Food> foods;
-    @Backlink(to = "actions")
+
+
     private ToOne<Insulin> insulin;
+
+    private ToOne<User> user;
 
     //Constructors
 
@@ -32,6 +35,15 @@ public class Action {
 
 
     //Getters & Setters
+
+
+    public ToOne<User> getUser() {
+        return user;
+    }
+
+    public void setUser(ToOne<User> user) {
+        this.user = user;
+    }
 
     public Long getId() {
         return id;

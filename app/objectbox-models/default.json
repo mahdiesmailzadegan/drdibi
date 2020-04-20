@@ -170,7 +170,7 @@
     },
     {
       "id": "5:6983975351488088030",
-      "lastPropertyId": "3:1676612816402767975",
+      "lastPropertyId": "6:4020539864814553439",
       "name": "Action",
       "properties": [
         {
@@ -180,38 +180,37 @@
           "flags": 3
         },
         {
-          "id": "2:2071146028526251604",
-          "name": "sugerTestId",
-          "indexId": "6:3221102345148758654",
-          "type": 11,
-          "flags": 1548,
-          "relationTarget": "SugerTest"
-        },
-        {
           "id": "3:1676612816402767975",
           "name": "userId",
           "indexId": "7:2495243952625857476",
           "type": 11,
           "flags": 1548,
           "relationTarget": "User"
-        }
-      ],
-      "relations": [
-        {
-          "id": "1:8105717174652497315",
-          "name": "insulins",
-          "targetId": "7:361325285964927958"
         },
         {
-          "id": "2:6612447902281268292",
-          "name": "foods",
-          "targetId": "6:5138557079836506796"
+          "id": "4:2939918179399620659",
+          "name": "sugarValue",
+          "type": 9
+        },
+        {
+          "id": "5:8005720335299886602",
+          "name": "dateTime",
+          "type": 9
+        },
+        {
+          "id": "6:4020539864814553439",
+          "name": "insulinId",
+          "indexId": "9:8169084929645152828",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Insulin"
         }
-      ]
+      ],
+      "relations": []
     },
     {
       "id": "6:5138557079836506796",
-      "lastPropertyId": "7:3787651399610467832",
+      "lastPropertyId": "9:4640856813710469729",
       "name": "Food",
       "properties": [
         {
@@ -228,45 +227,51 @@
         {
           "id": "3:6684125669923912256",
           "name": "glycaemicIndex",
-          "type": 7,
-          "flags": 4
-        },
-        {
-          "id": "4:364625968533875468",
-          "name": "getGlycaemicLoad",
-          "type": 7,
+          "type": 5,
           "flags": 4
         },
         {
           "id": "5:6286010184411461565",
           "name": "carbFactor",
-          "type": 7,
+          "type": 8,
           "flags": 4
         },
         {
           "id": "6:4697194317986272024",
           "name": "proteinFactor",
-          "type": 7,
+          "type": 8,
           "flags": 4
         },
         {
           "id": "7:3787651399610467832",
           "name": "fatFactor",
-          "type": 7,
+          "type": 8,
+          "flags": 4
+        },
+        {
+          "id": "8:1085681405122714582",
+          "name": "value",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "9:4640856813710469729",
+          "name": "glycaemicLoad",
+          "type": 5,
           "flags": 4
         }
       ],
       "relations": [
         {
-          "id": "3:3412231430538002226",
-          "name": "users",
-          "targetId": "4:1905413928432278770"
+          "id": "5:8212832993753081969",
+          "name": "actions",
+          "targetId": "5:6983975351488088030"
         }
       ]
     },
     {
       "id": "7:361325285964927958",
-      "lastPropertyId": "4:6375917989679463180",
+      "lastPropertyId": "8:2440820266915239949",
       "name": "Insulin",
       "properties": [
         {
@@ -286,57 +291,168 @@
           "type": 9
         },
         {
-          "id": "4:6375917989679463180",
-          "name": "dateTime",
+          "id": "5:4258249053938201769",
+          "name": "value",
+          "type": 9
+        },
+        {
+          "id": "6:7487043771851123313",
+          "name": "onSet",
+          "type": 9
+        },
+        {
+          "id": "7:6939711551705728564",
+          "name": "peak",
+          "type": 9
+        },
+        {
+          "id": "8:2440820266915239949",
+          "name": "duratin",
           "type": 9
         }
       ],
       "relations": []
     },
     {
-      "id": "8:269002433999020700",
-      "lastPropertyId": "4:3919778846696512310",
-      "name": "SugerTest",
+      "id": "9:5963669703502543103",
+      "lastPropertyId": "1:3803914849547340845",
+      "name": "Category",
       "properties": [
         {
-          "id": "1:6692722499769951284",
+          "id": "1:3803914849547340845",
+          "name": "id",
+          "type": 6,
+          "flags": 3
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "10:5596788220971864536",
+      "lastPropertyId": "4:4745840081122919337",
+      "name": "Order",
+      "properties": [
+        {
+          "id": "1:8190650868305513593",
           "name": "id",
           "type": 6,
           "flags": 3
         },
         {
-          "id": "2:631354334640921232",
-          "name": "meterName",
+          "id": "2:4208251838464804285",
+          "name": "total",
           "type": 9
         },
         {
-          "id": "3:4724430930647111637",
+          "id": "3:3917917481114328306",
           "name": "dateTime",
           "type": 9
         },
         {
-          "id": "4:3919778846696512310",
+          "id": "4:4745840081122919337",
           "name": "userId",
-          "indexId": "8:6910124095325956601",
+          "indexId": "10:4961654744596807269",
           "type": 11,
           "flags": 1548,
           "relationTarget": "User"
         }
       ],
+      "relations": [
+        {
+          "id": "6:1575588411920850501",
+          "name": "products",
+          "targetId": "11:428043179341325840"
+        }
+      ]
+    },
+    {
+      "id": "11:428043179341325840",
+      "lastPropertyId": "5:8440322568596495784",
+      "name": "Product",
+      "properties": [
+        {
+          "id": "1:6794941874237260117",
+          "name": "id",
+          "type": 6,
+          "flags": 3
+        },
+        {
+          "id": "2:8284829389521954259",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:2755199961427964908",
+          "name": "number",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "4:6342995319611280596",
+          "name": "price",
+          "type": 9
+        },
+        {
+          "id": "5:8440322568596495784",
+          "name": "subCategoryId",
+          "indexId": "11:4873857043441161910",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "SubCategory"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "12:7187515280027864736",
+      "lastPropertyId": "2:7975623457778217224",
+      "name": "SubCategory",
+      "properties": [
+        {
+          "id": "1:2783490141692236237",
+          "name": "id",
+          "type": 6,
+          "flags": 3
+        },
+        {
+          "id": "2:7975623457778217224",
+          "name": "categoryId",
+          "indexId": "12:5416702769781046826",
+          "type": 11,
+          "flags": 1548,
+          "relationTarget": "Category"
+        }
+      ],
       "relations": []
     }
   ],
-  "lastEntityId": "8:269002433999020700",
-  "lastIndexId": "8:6910124095325956601",
-  "lastRelationId": "4:5055351647712724623",
+  "lastEntityId": "12:7187515280027864736",
+  "lastIndexId": "12:5416702769781046826",
+  "lastRelationId": "6:1575588411920850501",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
-  "retiredEntityUids": [],
-  "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredEntityUids": [
+    269002433999020700
+  ],
+  "retiredIndexUids": [
+    6910124095325956601,
+    3221102345148758654
+  ],
+  "retiredPropertyUids": [
+    6692722499769951284,
+    631354334640921232,
+    4724430930647111637,
+    3919778846696512310,
+    6375917989679463180,
+    364625968533875468,
+    2071146028526251604
+  ],
   "retiredRelationUids": [
-    5055351647712724623
+    5055351647712724623,
+    3412231430538002226,
+    8105717174652497315,
+    6612447902281268292
   ],
   "version": 1
 }

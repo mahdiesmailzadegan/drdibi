@@ -2,6 +2,7 @@ package Model;
 
 import androidx.annotation.NonNull;
 
+import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.relation.ToMany;
@@ -21,7 +22,7 @@ public class Insulin {
     private String duratin;
 
     //Relations
-
+    @Backlink(to = "insulin")
     private ToMany<Action> actions;
 
     //Constructors

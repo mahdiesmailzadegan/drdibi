@@ -32,8 +32,7 @@ public class User {
     @Backlink(to = "user")
     private ToMany<Address> addresses;
 
-    @Backlink(to = "users")
-    private ToMany<Food> foods;
+
 
 
     @Backlink(to = "user")
@@ -57,6 +56,15 @@ public class User {
 
     //Getters & Setters
 
+
+    public ToMany<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ToMany<Order> orders) {
+        this.orders = orders;
+    }
+
     public double getMaxCarbFactor() {
         return maxCarbFactor;
     }
@@ -73,13 +81,7 @@ public class User {
         this.minCarbFactor = minCarbFactor;
     }
 
-    public ToMany<Food> getFoods() {
-        return foods;
-    }
 
-    public void setFoods(ToMany<Food> foods) {
-        this.foods = foods;
-    }
 
     public ToMany<Action> getActions() {
         return actions;
@@ -89,9 +91,9 @@ public class User {
         this.actions = actions;
     }
 
-    /*public double getCarbFactor() {
+    public double getCarbFactor() {
 
-        if (weight < 27) {
+       /* if (weight < 27) {
             maxCarbFactor = 30;
             minCarbFactor = 15;
             checkHour();
@@ -144,10 +146,10 @@ public class User {
             checkHour();
 
         }
-
+*/
 
         return carbFactor;
-    }*/
+    }
 
     public void setCarbFactor(double carbFactor) {
         this.carbFactor = carbFactor;

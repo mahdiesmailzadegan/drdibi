@@ -18,7 +18,7 @@ public class SubCategory {
 
     private ToOne<Category> category;
 
-    @Backlink(to = "subcategory")
+    @Backlink(to = "subCategory")
     private ToMany<Product> products;
 
     //Constructors

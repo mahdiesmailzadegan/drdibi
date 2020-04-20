@@ -17,6 +17,7 @@ public class Product {
     private Long id;
     private String name;
     private int number;
+    private String price;
 
     //Relations
 
@@ -32,6 +33,31 @@ public class Product {
 
 
     //Getters & Setters
+
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public ToMany<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ToMany<Order> orders) {
+        this.orders = orders;
+    }
 
     public Long getId() {
         return id;
