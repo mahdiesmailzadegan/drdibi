@@ -1,8 +1,8 @@
-package Controller;
+package controller;
 
 import android.app.Application;
 
-import static Controller.ObjectBox.init;
+import static controller.ObjectBox.init;
 
 
 public class TheApp extends Application {

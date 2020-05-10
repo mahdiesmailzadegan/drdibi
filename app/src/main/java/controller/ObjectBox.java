@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import android.content.Context;
 import android.util.Log;
