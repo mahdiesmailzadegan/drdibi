@@ -19,14 +19,13 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private MainActivityVM mainActivityVM;
-
-
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         mainActivityVM = ViewModelProviders.of(this).get(MainActivityVM.class);
 

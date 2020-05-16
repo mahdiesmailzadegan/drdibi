@@ -8,35 +8,42 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.List;
+
 import Model.User;
-import controller.ObjectBox;
-import io.objectbox.Box;
 import ir.drdibi.R;
 
-public class RegisterFragment extends Fragment {
-    private Box<User> userBox;
+public class ProfileFragment extends Fragment {
 
 
-    private RegisterViewModel registerVM;
+    private ProfileViewModel registerVM;
 
-    public static RegisterFragment newInstance() {
-        return new RegisterFragment();
+    public static ProfileFragment newInstance() {
+        return new ProfileFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.register_fragment, container, false);
+        return inflater.inflate(R.layout.profile, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        userBox = ObjectBox.get().boxFor(User.class);
-        registerVM = ViewModelProviders.of(this).get(RegisterViewModel.class);
-        // TODO: Use the ViewModel
+        registerVM = ViewModelProviders.of(this).get(ProfileViewModel.class);
+        registerVM.getUserLiveData().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                User user = users.get(0);
+                user.getWeight();
+
+
+            }
+        });
 
 
     }
