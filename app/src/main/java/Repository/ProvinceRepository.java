@@ -22,7 +22,7 @@ public class ProvinceRepository {
     public void setupProvince(Context context) {
 
 
-        String jsonString = null;
+        String jsonString ;
 
         try {
             InputStream inputStream = context.getAssets().open("iran.json");
@@ -45,10 +45,6 @@ public class ProvinceRepository {
 
 
                 JSONObject object = jsonArray.getJSONObject(i);
-
-
-
-
 
 
                     provinceBox.put(new Province(object.getString("name")));
