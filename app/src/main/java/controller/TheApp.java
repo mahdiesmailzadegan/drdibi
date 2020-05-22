@@ -11,7 +11,7 @@ public class TheApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        init(this);
+        ObjectBox.init(this);
     }
 
 

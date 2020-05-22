@@ -19,8 +19,8 @@
             android:id="@+id/action_nav_home_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
         <action
-            android:id="@+id/action_nav_home_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            android:id="@+id/action_nav_home_to_profilefragment"
+            app:destination="@id/nav_profile" />
     </fragment>
 
 
@@ -35,9 +35,10 @@
         android:name="ir.drdibi.ui.dibikala.DibikalaFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="ir.drdibi.ui.register.ProfileFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/profile" />
+        android:id="@+id/nav_profile"
+        android:name="ir.drdibi.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/profile_fragment" />
 </navigation>

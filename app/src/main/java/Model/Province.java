@@ -10,9 +10,17 @@ public class Province {
 
     //Variables
 
-    @Id
+    @Id(assignable = true)
     private long id;
     private String name;
+
+
+
+
+
+
+
+
 
     //Relations
 

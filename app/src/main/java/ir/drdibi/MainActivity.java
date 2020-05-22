@@ -1,11 +1,14 @@
 package ir.drdibi;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
@@ -15,19 +18,32 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private MainActivityVM mainActivityVM;
     private AppBarConfiguration mAppBarConfiguration;
 
+    List<String> stringList=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+       setContentView(R.layout.activity_main);
 
 
+        readjson();
         mainActivityVM = ViewModelProviders.of(this).get(MainActivityVM.class);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,8 +51,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+
+                Toast.makeText(getApplicationContext(), stringList.get(29)+"", Toast.LENGTH_SHORT).show();
+
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -44,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_profile)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -66,4 +85,61 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
+
+    public void readjson(){
+
+
+        String jsonString=null;
+
+        try {
+            InputStream inputStream=getAssets().open("iran.json");
+
+            int size=inputStream.available();
+
+            byte[] buffer=new byte[size];
+
+            inputStream.read(buffer);
+            inputStream.close();
+
+            jsonString=new String(buffer,"utf-8");
+
+
+            JSONObject jsonObject=new JSONObject(jsonString);
+
+            JSONArray jsonArray=jsonObject.getJSONArray("states");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+
+                JSONObject object=jsonArray.getJSONObject(i);
+
+                stringList.add(object.getString("name"));
+
+
+
+            }
+
+
+
+
+
+
+
+
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
+
+
+
+
 }

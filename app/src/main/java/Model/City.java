@@ -12,7 +12,7 @@ public class City {
 
     //Variables
 
-    @Id
+    @Id(assignable = true)
     private long id;
     private String name;
 
