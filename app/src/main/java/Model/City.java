@@ -21,7 +21,7 @@ public class City {
     @Backlink(to = "city")
     private ToMany<Address> addresses;
 
-    private ToOne<Province> province;
+    public ToOne<Province> province;
 
     //Constructors
 
